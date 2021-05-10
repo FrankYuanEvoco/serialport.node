@@ -23,8 +23,8 @@ before_install:
     fi
   - if [ $TRAVIS_OS_NAME == "windows" ]; then
       choco install python --version 3.7;
-      python --version;
-      python -m pip install upgrade pip;
+      python3 --version;
+      python3 -m pip3 install --upgrade pip;
     fi
   - npm install -g vsce
   - npm install -g node-gyp
