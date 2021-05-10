@@ -23,6 +23,7 @@ before_install:
     fi
   - if [ $TRAVIS_OS_NAME == "windows" ]; then
       choco install python --version 3.7;
+      PATH=/c/Python37:/c/Python37/Scripts$PATH
       python3 --version;
       python3 -m pip3 install --upgrade pip;
     fi
