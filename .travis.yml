@@ -29,7 +29,7 @@ before_install:
     PATH=/c/Python37:/c/Python37/Scripts$PATH;
     python --version;
     python -m pip install --upgrade pip;
-  fi
+    fi
 
 
 install:
