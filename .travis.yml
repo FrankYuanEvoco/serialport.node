@@ -25,6 +25,7 @@ before_install:
       choco install python --version 3.7;
       python --version;
       python -m pip install upgrade pip;
+    fi
   - npm install -g vsce
   - npm install -g node-gyp
   - npm install -g gulp
