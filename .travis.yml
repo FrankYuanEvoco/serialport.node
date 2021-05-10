@@ -21,7 +21,7 @@ before_install:
       sudo apt-get install -y build-essential;
       sudo apt-get install libudev-dev;
     fi
-  - if [ $TRAVIS_OS_NAME == "windows"]; then
+  - if [ $TRAVIS_OS_NAME == "windows" ]; then
       choco install python --version 3.7;
       python --version;
       python -m pip install upgrade pip;
