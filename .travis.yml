@@ -26,7 +26,7 @@ before_install:
   - npm install -g gulp
   - if [ $TRAVIS_OS_NAME == "windows" ]; then
     choco install python --version 3.7;
-    npm config set python /c/Python37
+    npm config set python /c/Python37;
     fi
 
 install:
