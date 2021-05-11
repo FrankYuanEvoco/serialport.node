@@ -2,7 +2,7 @@
 const { exec } = require('child_process');
 const path = require("path");
 const serialportBindingsPath = path.join(__dirname, "../../@serialport/bindings/");
-const command = `cd ${serialportBindingsPath} && node-gyp rebuild --target=11.2.1 --arch=x64 --dist-url=https://atom.io/download/electron`;
+const command = `cd ${serialportBindingsPath} && node-gyp rebuild --target=12.0.4 --arch=x64 --dist-url=https://atom.io/download/electron`;
 exec(command,(error, stdout, stderr) => {
     console.log(stdout);
     console.log(stderr);

@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "10"
+  - "14"
 
 # safelist
 branches:
@@ -24,9 +24,13 @@ before_install:
   - npm install -g vsce
   - npm install -g node-gyp
   - npm install -g gulp
+  - if [ $TRAVIS_OS_NAME == "windows" ]; then
+    choco install python --version 3.7;
+    npm config set python /c/Python37;
+    fi
 
 install:
   - npm install
 
 script:
-  - gulp build --electron="11.2.1" --token="$API_TOKEN" --tag="downloads"
+  - gulp build --electron="12.0.4" --token="$API_TOKEN" --tag="downloads"
