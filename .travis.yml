@@ -33,4 +33,4 @@ install:
   - npm install
 
 script:
-  - gulp build --electron="12.0.4" --token="$API_TOKEN" --tag="downloads"
+  - gulp build --electron="13.1.7" --token="$API_TOKEN" --tag="downloads"
