@@ -127,15 +127,19 @@ gulp.task('build', (done)=> {
     const tagName = cliArgs.tag;
     const electron = cliArgs.electron;
 
-    const archs = ["ia32", "x64"];
+    const archs = ["ia32", "x64", "arm64"];
     const platform = require('os').platform();
 
     const tasks = [];
     async.waterfall([
         (callback) => {
         for (const arch of archs) {
-            if (platform == "linux" && arch == "ia32") {
+            if (platform === "linux" && arch === "ia32") {
                 console.log("Skipping task when arch = ia32, platform = linux since node 10 is not supported for this combination.");
+                continue;
+            }
+            if (arch === "arm64" && platform !== "darwin") {
+                console.log("Skipping task when arch = arm64, platform != darwin since that combination is only needed for Apple M1");
                 continue;
             }
 
