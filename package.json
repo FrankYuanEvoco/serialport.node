@@ -12,6 +12,7 @@
   },
   "author": "vsc-npm",
   "devDependencies": {
+    "@types/serialport": "^8.0.2",
     "async": "^2.1.4",
     "azure-storage": "^2.10.3",
     "gulp": "^4.0.2",
