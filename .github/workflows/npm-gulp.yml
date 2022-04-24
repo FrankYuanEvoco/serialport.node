@@ -27,5 +27,5 @@ jobs:
         npm install -g vsce
         npm install -g node-gyp
         npm install -g gulp
-        npm install
+        npm install --no-optional
         gulp build --electron="17.2.0" --tag="downloads"
