@@ -119,11 +119,11 @@ function getNodeNameAndUploadAssets(libraryName, electron, arch, client, tagName
 }
 
 gulp.task('build', (done)=> {
-    if (!cliArgs.electron || !cliArgs.token || !cliArgs.tag) {
-        done('Missing electron version, token, tag parameters!');
+    if (!cliArgs.electron ||  !cliArgs.tag) {
+        done('Missing electron version, tag parameters!');
         return ;
     }
-    const client = github.client(cliArgs.token);
+    // const client = github.client(cliArgs.token);
     const tagName = cliArgs.tag;
     const electron = cliArgs.electron;
 
@@ -150,7 +150,7 @@ gulp.task('build', (done)=> {
                     callback('[node-gyp] Compiling usb-detection native code failed.');
                 } else {
                     console.log(`[node-gyp] Build complete.Generate dll at ${detectionNodePath}`);
-                    getNodeNameAndUploadAssets("detector", electron, arch, client, tagName, detectionNodePath, callback);
+                    // getNodeNameAndUploadAssets("detector", electron, arch, client, tagName, detectionNodePath, callback);
                 }
             });
 
@@ -163,7 +163,7 @@ gulp.task('build', (done)=> {
                     callback('[node-gyp] Compiling serialport native code failed.');
                 } else {
                     console.log(`[node-gyp] Build complete.Generate dll at ${serialportNodePath}`);
-                    getNodeNameAndUploadAssets("serialport", electron, arch, client, tagName, serialportNodePath, callback);
+                    // getNodeNameAndUploadAssets("serialport", electron, arch, client, tagName, serialportNodePath, callback);
                 }
             });
         }
