@@ -127,7 +127,7 @@ gulp.task('build', (done)=> {
     const tagName = cliArgs.tag;
     const electron = cliArgs.electron;
 
-    const archs = ["ia32", "x64"];
+    const archs = ["x64"];
     const platform = require('os').platform();
 
     const tasks = [];

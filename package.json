@@ -19,7 +19,7 @@
     "gulp-cli": "^2.3.0",
     "linux-distro": "^4.0.1",
     "nan": "^2.14.2",
-    "node-gyp": "^7.1.2",
+    "node-gyp": "^9.0.0",
     "octonode": "^0.10.0",
     "shelljs": "^0.8.4",
     "simple-git": "^1.65.0",
