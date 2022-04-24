@@ -1,0 +1,33 @@
+name: NodeJS with Gulp
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+    
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+
+    - name: Build
+      run: |
+        npm install -g vsce
+        npm install -g node-gyp
+        npm install -g gulp
+        choco install python --version 3.7
+        npm config set python /c/Python37
+        npm install
+        gulp build --electron="17.2.0" --tag="downloads"
